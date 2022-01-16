@@ -85,6 +85,7 @@ object Questions extends App {
 //  println(question4(List(1,2,3,4,5)))
 //  println(question4(List.empty))
 
+
 //  println(question5(List(1,2,3,4,5)))
 //  println(question5(List.empty))
 
