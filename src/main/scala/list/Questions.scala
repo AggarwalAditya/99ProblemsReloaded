@@ -1,5 +1,6 @@
 package list
 
+import java.util.NoSuchElementException
 import scala.annotation.tailrec
 
 object Questions extends App {
@@ -35,10 +36,24 @@ object Questions extends App {
     }
 
 
+  @tailrec
+  def question3(list: List[Int], k: Int): Int = {
+    (k, list) match {
+      case (_, Nil) => -1
+      case (0, h :: _) => h
+      case (_, _ :: t) => question3(t, k - 1)
+    }
+  }
+
+
   //println(question1B(List(1)))
-  println(question2B(List(1,2,3)))
-  println(question2B(List(1,2)))
-  println(question2B(List(1)))
-  println(question2B(List.empty))
+  //  println(question2B(List(1,2,3)))
+  //  println(question2B(List(1,2)))
+  //  println(question2B(List(1)))
+  //  println(question2B(List.empty))
+
+  println(question3(List(1, 2, 3, 4, 5), 9))
+  println(question3(List(1, 2, 3, 4, 5), 2))
+  println(question3(List(1, 2, 3, 4, 5), 0))
 
 }
