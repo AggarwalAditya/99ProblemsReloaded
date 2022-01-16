@@ -56,6 +56,17 @@ object Questions extends App {
     go(list,0)
   }
 
+  def question5(list: List[Int]): List[Int] = {
+    @tailrec
+    def go(list: List[Int], res: List[Int]): List[Int] = {
+      list match {
+        case Nil => res
+        case h::t => go(t, h::res)
+      }
+    }
+    go(list, Nil)
+  }
+
 
   //println(question1B(List(1)))
   //  println(question2B(List(1,2,3)))
@@ -67,7 +78,10 @@ object Questions extends App {
 //  println(question3(List(1, 2, 3, 4, 5), 2))
 //  println(question3(List(1, 2, 3, 4, 5), 0))
 
-  println(question4(List(1,2,3,4,5)))
-  println(question4(List.empty))
+//  println(question4(List(1,2,3,4,5)))
+//  println(question4(List.empty))
+
+  println(question5(List(1,2,3,4,5)))
+  println(question5(List.empty))
 
 }
