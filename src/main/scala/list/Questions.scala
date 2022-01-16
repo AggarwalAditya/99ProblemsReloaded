@@ -68,6 +68,10 @@ object Questions extends App {
   }
 
 
+  def question6(list: List[Int]): Boolean = {
+    list.equals(question5(list))
+  }
+
   //println(question1B(List(1)))
   //  println(question2B(List(1,2,3)))
   //  println(question2B(List(1,2)))
@@ -81,7 +85,12 @@ object Questions extends App {
 //  println(question4(List(1,2,3,4,5)))
 //  println(question4(List.empty))
 
-  println(question5(List(1,2,3,4,5)))
-  println(question5(List.empty))
+//  println(question5(List(1,2,3,4,5)))
+//  println(question5(List.empty))
+
+  println(question6(List(1,2,1)))
+  println(question6(List(1)))
+  println(question6(List()))
+  println(question6(List(1,2,3)))
 
 }
