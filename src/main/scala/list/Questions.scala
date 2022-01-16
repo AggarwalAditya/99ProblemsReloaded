@@ -72,6 +72,13 @@ object Questions extends App {
     list.equals(question5(list))
   }
 
+  def question7(list: List[Any]): List[Any] = {
+    list.flatMap {
+      case l: List[_] => question7(l)
+      case e => List(e)
+    }
+  }
+
   //println(question1B(List(1)))
   //  println(question2B(List(1,2,3)))
   //  println(question2B(List(1,2)))
@@ -89,9 +96,11 @@ object Questions extends App {
 //  println(question5(List(1,2,3,4,5)))
 //  println(question5(List.empty))
 
-  println(question6(List(1,2,1)))
-  println(question6(List(1)))
-  println(question6(List()))
-  println(question6(List(1,2,3)))
+//  println(question6(List(1,2,1)))
+//  println(question6(List(1)))
+//  println(question6(List()))
+//  println(question6(List(1,2,3)))
+
+  println(question7(List(1,List(2,3))))
 
 }
